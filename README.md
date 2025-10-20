@@ -49,15 +49,15 @@ python polarhalftone.py input.png --center_x -150 --clean --print
 |------|-------------|---------|
 | `-h, --help` | Show this help message and exit | – |
 | `--output OUTPUT` | Output SVG filename (e.g., `output.svg`) | Auto-generated from input |
-| `--N N` | Total number of concentric rings | *(code-defined)* |
-| `--base_N BASE_N` | Base ring count before scaling | *(code-defined)* |
-| `--min_thick MIN_THICK` | Minimum stroke thickness (px) | *(code-defined)* |
-| `--max_thick MAX_THICK` | Maximum stroke thickness (px) | *(code-defined)* |
-| `--epsilon EPSILON` | Path simplification tolerance (Douglas-Peucker) | *(code-defined)* |
+| `--N N` | Total number of concentric rings | `80` |
+| `--base_N BASE_N` | Base ring count before scaling | `100` |
+| `--min_thick MIN_THICK` | Minimum stroke thickness (px) | `0.5` |
+| `--max_thick MAX_THICK` | Maximum stroke thickness (px) | `7` |
+| `--epsilon EPSILON` | Path simplification tolerance (Douglas-Peucker) | `0.2` |
 | `--center_x CENTER_X` | X-offset of halftone center from image center (px) | `0` |
 | `--center_y CENTER_Y` | Y-offset of halftone center from image center (px) | `0` |
-| `--base_arc_len BASE_ARC_LEN` | Base arc length per ring segment | *(code-defined)* |
-| `--stroke_tolerance STROKE_TOLERANCE` | Tolerance for merging nearby strokes | *(code-defined)* |
+| `--base_arc_len BASE_ARC_LEN` | Base arc length per ring segment | `4.0` |
+| `--stroke_tolerance STROKE_TOLERANCE` | Tolerance for merging nearby strokes | `0.01` |
 | `--verbose` | Enable verbose logging | *off* |
 | `--no-progress` | Disable progress bar | *off* |
 | `--no-minify` | Preserve full floating-point precision in SVG | *off* |
@@ -70,4 +70,3 @@ python polarhalftone.py input.png --center_x -150 --clean --print
 
 ### Notes:
 - **`--threshold`**: Only applies when `--clean` is active. Controls the maximum allowed length of any single path segment before it's split or removed.
-- **Default values**: Replace `*(code-defined)*` with actual defaults from your script (e.g., check `argparse` defaults).
