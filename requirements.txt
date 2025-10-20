@@ -1,4 +1,8 @@
 numpy>=1.21.0
 matplotlib>=3.5.0
-opencv-python>=4.5.5.64
 svgwrite>=1.4
+
+# Default to headless on Linux (covers Synology, Docker, servers)
+opencv-python-headless>=4.5.5.64; sys_platform == "linux"
+# Use normal OpenCV on macOS and Windows
+opencv-python>=4.5.5.64; sys_platform != "linux"
